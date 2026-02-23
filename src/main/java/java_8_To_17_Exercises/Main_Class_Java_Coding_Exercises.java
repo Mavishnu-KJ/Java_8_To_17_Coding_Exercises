@@ -1,8 +1,6 @@
 package java_8_To_17_Exercises;
 
-import javax.swing.text.html.Option;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -19,11 +17,10 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Java_Coding_Exercises_001 {
+public class Main_Class_Java_Coding_Exercises {
 
     public static void main(String[] args) {
 
