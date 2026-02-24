@@ -1257,6 +1257,18 @@ public class Main_Class_Java_Coding_Exercises {
         System.out.println("Guarded pattern in switch");
         objectList.forEach(obj->System.out.println(describeObjectWithGuardedPatternInSwitch(obj)));
 
+        //5. Sealed interface with multiple implementations and Exhaustive Pattern Matching
+        PaymentStatus success = PaymentStatus.fromCode(200); //Using static method
+        PaymentStatus failure = PaymentStatus.fromCode(400); //Using factory method
+        PaymentStatus pending = PaymentStatus.fromCode(500); //Using factory method
+
+        List<PaymentStatus> paymentStatusList = Arrays.asList(
+                success, failure, pending
+        );
+
+        System.out.println("Exhaustive Pattern Matching with switch - sealed interface");
+        paymentStatusList.forEach(obj->System.out.println(describeObjectWithExhaustivePattern(obj)));
+
     }
 
     //1. Pattern matching instanceof using if-else statement
@@ -1346,7 +1358,17 @@ public class Main_Class_Java_Coding_Exercises {
 
             default -> "Unknown type : "+obj.getClass().getSimpleName();
         };
+    }
 
+    //5. Exhaustive Pattern Matching with switch - sealed interface
+    public static String describeObjectWithExhaustivePattern(PaymentStatus paymentStatus){
+        return switch (paymentStatus){
+            case PaymentSuccess success -> "Payment success : "+success.transactionId();
+            case PaymentFailure failure -> "Payment failed : "+failure.failureReason();
+            case PaymentPending pending -> "Payment pending : "+pending.message();
+            //default -> "Default" // No default needed — compiler knows all cases covered!,
+            //This is exhaustive pattern compiler check
+        };
     }
 
 
