@@ -245,8 +245,8 @@ public class Main_Class_Java_Coding_Exercises {
 
         //Case 1: If value is present
         optionalWithNonNullValueString.ifPresentOrElse(
-                (value) -> System.out.println(value), // Can use System.out::println instead
-                () -> System.out.println("default")
+                (value) -> System.out.println(value), //First lambda: Consumer if value present // Can use System.out::println instead 
+                () -> System.out.println("default") //Second lambda: Runnable if absent
         );
 
         //Case 2: If value is not present
