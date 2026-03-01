@@ -273,7 +273,7 @@ public class Main_Class_Java_Coding_Exercises {
                 return true;
             if (n % 2 == 0)
                 return false;
-            for (int i = 3; i <= Math.sqrt(n); i = i + 2) {
+            for (long i = 3; i <= Math.sqrt(n); i = i + 2) { //Use long for i in loop (safer for very large n)
                 if (n % i == 0)
                     return false;
             }
