@@ -57,7 +57,8 @@ public class MainClassForExercises0006 {
                                 Employee :: department, // grouped by department
                                 Collectors.maxBy(Comparator.comparingDouble(Employee :: salary)) // Employee sorted by salary descending, one max employee only
                         )// HashMap : Key : department, Value -> Optional<Employee>
-                ).entrySet().stream() //converting Map into stream for further processing
+                ).entrySet().stream()
+                //converting Map into stream for further processing
                 .collect(Collectors.toMap( //Iterating the map
                         Map.Entry :: getKey, // Department as key
                         entry -> entry.getValue().orElse(null) // Unwrap Optional<Employee>
